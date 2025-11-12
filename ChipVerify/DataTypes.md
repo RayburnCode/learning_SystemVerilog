@@ -21,6 +21,7 @@ reg, wire,integer, and real are the only types available in Verilog.
 
 ## States
 
+| --------- | --------------- |
 | 0 | Logic state 0 - variable/net is at 0 volts |
 | 1 | Logic state 1 - variable/net is at some value > 0.7 volts |
 | x or X | Logic state X - variable/net has either 0/1 - we just don't know |
