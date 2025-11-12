@@ -38,3 +38,38 @@ typedef struct {
     real    dollars;
 } s_money;
 ```
+
+### Logic
+
+Can be driven in both procedural blocks and continuous assign statements. However, a signal with more than one driver needs to be declared a net-type such as wire so that SystemVerilog can resolve the final value based on strength.
+
+```SystemVeilog
+module tb;
+    logic [3:0]  my_data; // Declare a 4-bit logic type variable
+    logic        en; // Declare a 1-bit logic type variable
+
+    initial begin
+        $display ("my_data=0x%0h en=%0b", my_data, en);   // Default value of logic type is X
+        my_data = 4'hB;  // logic datatype can be driven in initial/always blocks
+        $display ("my_data=0x%0h en=%0b", my_data, en);
+        #1;
+        $display ("my_data=0x%0h en=%0b", my_data, en);
+    end
+
+    assign en = my_data[0];       // logic datatype can also be driven via assign statements
+endmodule
+```
+
+### bit
+
+A range specification ([MSB:LSB]) should be provided to make it represent and store multiple bits.
+
+- LSB: Least Significant Bit
+- MSB: Most Significant Bit
+
+```SystemVerilog
+  bit       var_a;       // Declare a 1 bit variable of type "bit"
+  bit [3:0] var_b;       // Declare a 4 bit variable of type "bit"
+
+  logic [3:0] x_val;     // Declare a 4 bit variable of type "logic"
+```
