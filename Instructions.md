@@ -12,12 +12,3 @@
 
 - DUT: Design Under Test
 - DUV: Design Under Verification
-
-## Data Types
-
-| Data Type | 2-State/4-State | # Bits | (Un)Signed |
-| --------- | --------------- | ------ | ---------- |
-| reg       | 4               | >=1    | Unsigned   |
-| wire      | 4               | >=1    | Unsigned   |
-| integer   | 4               | 32     | Signed     |
-| real      | --              | --     | --         |
