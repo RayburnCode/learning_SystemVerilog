@@ -21,6 +21,8 @@ Combinational Logic vs Sequential Logic ("State")
 - HVL: Hardware Verification Language
 - SVA: SystemVerilog Assertions
 - Testbench
+- FPGA: Field-Programmable Gate Array
+- ASIC: Application-Specific Integrated Circuit
 
 ### Keys to Learn
 
@@ -37,6 +39,10 @@ Testbench can be written in the same HDL or a HVL
 
 Structured Testbench. Testbench made of different components that each have specialist jobs to do.
 ex: driver, monitor, checker, etc.
+
+#### Books
+
+Digital Design and Computer Architecture, RISC-V Edition: RISC-V Edition, Harris & Harris
 
 #### Tool
 
