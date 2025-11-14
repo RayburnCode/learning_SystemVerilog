@@ -11,10 +11,12 @@ RV32I contains 40 unique instructions
 (The RISC-V Instruction Set Manual Volume I, p.25-26 )
 
 rs1 & rs2 = source
+
 rd = destination register
 
 - R = Register-Register [31:0]
-  Algorithmic and Logic operations
+
+Algorithmic and Logic operations
 
 | [31:25] | [24:20] | [19:15] | [14:12] | [11:7] | [6:0]  |
 | ------- | ------- | ------- | ------- | ------ | ------ |
@@ -22,22 +24,27 @@ rd = destination register
 
 Functions:
 
-- ADD = Addition.
-
-  - `add rd, rs1, rs2`
+| name| assembly | optcode | funct3 | funct7 | description |
+| Arithmetic | ------- | ------- | ------- | ------ | ------ |
+| ADD | add rd, rs1, rs2 | rs1 | funct3 | 0000000 |Adition |
+| SUB | sub rd, rs1, rs2 | rs1 | funct3 | 0100000 | Subtraction |
+| Logical | ------- | ------- | ------- | ------ | ------ |
 
 - SLT = Set Less Than.
+  `slt rd,rs1,rs2`
 
-  - `slt rd,rs1,rs2`
+- SLTU = Set Less Than Unsigned.
+  `sltu rd,rs1,rs2`
 
-    SLTU
-    AND
-    OR
-    XOR
-    SLL
-    SRL
-    SUB
-    SRA
+- AND
+
+- OR
+
+      XOR
+      SLL
+      SRL
+      SUB
+      SRA
 
 - I = Immediate
   immediate is a constant
