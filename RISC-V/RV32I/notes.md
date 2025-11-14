@@ -6,6 +6,63 @@ RV32I was designed to be sufficient to form a compiler target and to support mod
 
 RV32I contains 40 unique instructions
 
+## Base instruction formats
+
+(The RISC-V Instruction Set Manual Volume I, p.25-26 )
+
+rs1 & rs2 = source
+rd = destination register
+
+- R = Register-Register [31:0]
+  Algorithmic and Logic operations
+
+| [31:25] | [24:20] | [19:15] | [14:12] | [11:7] | [6:0]  |
+| ------- | ------- | ------- | ------- | ------ | ------ |
+| funct7  | rs2     | rs1     | funct3  | rd     | opcode |
+
+Functions:
+
+- ADD = Addition.
+
+  - `add rd, rs1, rs2`
+
+- SLT = Set Less Than.
+
+  - `slt rd,rs1,rs2`
+
+    SLTU
+    AND
+    OR
+    XOR
+    SLL
+    SRL
+    SUB
+    SRA
+
+- I = Immediate
+  immediate is a constant
+
+  | [31:20]   | [19:15] | [14:12] | [11:7] | [6:0]  |
+  | --------- | ------- | ------- | ------ | ------ |
+  | imm[11:0] | rs1     | funct3  | rd     | opcode |
+
+- S = Store
+
+| [31:25]    | [24:20] | [19:15] | [14:12] | [11:7]   | [6:0]  |
+| ---------- | ------- | ------- | ------- | -------- | ------ |
+| imm[11:15] | rs2     | rs1     | funct3  | imm[4:0] | opcode |
+
+- U
+
+  | [31:12]    | [11:7] | [6:0]  |
+  | ---------- | ------ | ------ |
+  | imm[31:12] | rd     | opcode |
+
+- B = Branch
+- J
+
+CSR?
+
 ## Models
 
 Clock and Reset
