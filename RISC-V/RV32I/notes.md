@@ -16,26 +16,26 @@ rd = destination register
 
 - R = Register-Register [31:0]
 
-Algorithmic and Logic operations
+**Algorithmic and Logic operations**
 
 | [31:25] | [24:20] | [19:15] | [14:12] | [11:7] | [6:0]  |
 | ------- | ------- | ------- | ------- | ------ | ------ |
 | funct7  | rs2     | rs1     | funct3  | rd     | opcode |
 
-Functions:
+**Functions:**
 
-| category   | name | assembly         | opcode  | funct3 | funct7  | description             |
-| ---------- | ---- | ---------------- | ------- | ------ | ------- | ----------------------- |
-| Arithmetic | ADD  | add rd, rs1, rs2 | 0110011 | 000    | 0000000 | Addition                |
-| Arithmetic | SUB  | sub rd, rs1, rs2 | 0110011 | 000    | 0100000 | Subtraction             |
-| Logical    | AND  | and rd, rs1, rs2 | 0110011 |        | 0000000 | AND                     |
-| Logical    | OR   | or rd, rs1, rs2  | 0110011 | 110    | 0000000 | OR                      |
-| Logical    | XOR  | xor rd, rs1, rs2 | 0110011 | 100    | 0000000 | XOR                     |
-| Shifts     | SLL  |                  |         |        |         | Shift Left Logical      |
-| Shifts     | SRL  |                  |         |        |         | Shift Right Logical     |
-| Shifts     | SRA  |                  |         |        |         | Shift Right Algorithmic |
-| Comparison | SLT  | slt rd,rs1,rs2   |         |        |         | Set Less Than           |
-| Comparison | SLT  | sltu rd,rs1,rs2  |         |        |         | Set Less Than Unsigned  |
+| category   | name | assembly          | opcode  | funct3 | funct7  | description            |
+| ---------- | ---- | ----------------- | ------- | ------ | ------- | ---------------------- |
+| Arithmetic | ADD  | add rd, rs1, rs2  | 0110011 | 000    | 0000000 | Addition               |
+| Arithmetic | SUB  | sub rd, rs1, rs2  | 0110011 | 000    | 0100000 | Subtraction            |
+| Logical    | AND  | and rd, rs1, rs2  | 0110011 | 111    | 0000000 | AND                    |
+| Logical    | OR   | or rd, rs1, rs2   | 0110011 | 110    | 0000000 | OR                     |
+| Logical    | XOR  | xor rd, rs1, rs2  | 0110011 | 100    | 0000000 | XOR                    |
+| Shifts     | SLL  | sll rd, rs1, rs2  | 0110011 | 001    | 0000000 | Shift Left Logical     |
+| Shifts     | SRL  | srl rd, rs1, rs2  | 0110011 | 101    | 0000000 | Shift Right Logical    |
+| Shifts     | SRA  | sra rd, rs1, rs2  | 0110011 | 101    | 0100000 | Shift Right Arithmetic |
+| Comparison | SLT  | slt rd, rs1, rs2  | 0110011 | 010    | 0000000 | Set Less Than          |
+| Comparison | SLTU | sltu rd, rs1, rs2 | 0110011 | 011    | 0000000 | Set Less Than Unsigned |
 
 - I = Immediate
   immediate is a constant
@@ -43,6 +43,12 @@ Functions:
   | [31:20]   | [19:15] | [14:12] | [11:7] | [6:0]  |
   | --------- | ------- | ------- | ------ | ------ |
   | imm[11:0] | rs1     | funct3  | rd     | opcode |
+
+  | category   | name | assembly | opcode | funct3 | funct7 | description |
+  | ---------- | ---- | -------- | ------ | ------ | ------ | ----------- |
+  | Arithmetic | SLLI |          |        |        |        |             |
+  | Arithmetic | SRLI |          |        |        |        |             |
+  | Arithmetic | SRAI |          |        |        |        |             |
 
 - S = Store
 
