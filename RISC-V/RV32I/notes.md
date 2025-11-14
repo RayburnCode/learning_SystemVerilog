@@ -24,27 +24,18 @@ Algorithmic and Logic operations
 
 Functions:
 
-| name| assembly | optcode | funct3 | funct7 | description |
-| Arithmetic | ------- | ------- | ------- | ------ | ------ |
-| ADD | add rd, rs1, rs2 | rs1 | funct3 | 0000000 |Adition |
-| SUB | sub rd, rs1, rs2 | rs1 | funct3 | 0100000 | Subtraction |
-| Logical | ------- | ------- | ------- | ------ | ------ |
-
-- SLT = Set Less Than.
-  `slt rd,rs1,rs2`
-
-- SLTU = Set Less Than Unsigned.
-  `sltu rd,rs1,rs2`
-
-- AND
-
-- OR
-
-      XOR
-      SLL
-      SRL
-      SUB
-      SRA
+| category   | name | assembly         | opcode  | funct3 | funct7  | description             |
+| ---------- | ---- | ---------------- | ------- | ------ | ------- | ----------------------- |
+| Arithmetic | ADD  | add rd, rs1, rs2 | 0110011 | 000    | 0000000 | Addition                |
+| Arithmetic | SUB  | sub rd, rs1, rs2 | 0110011 | 000    | 0100000 | Subtraction             |
+| Logical    | AND  | and rd, rs1, rs2 | 0110011 |        | 0000000 | AND                     |
+| Logical    | OR   | or rd, rs1, rs2  | 0110011 | 110    | 0000000 | OR                      |
+| Logical    | XOR  | xor rd, rs1, rs2 | 0110011 | 100    | 0000000 | XOR                     |
+| Shifts     | SLL  |                  |         |        |         | Shift Left Logical      |
+| Shifts     | SRL  |                  |         |        |         | Shift Right Logical     |
+| Shifts     | SRA  |                  |         |        |         | Shift Right Algorithmic |
+| Comparison | SLT  | slt rd,rs1,rs2   |         |        |         | Set Less Than           |
+| Comparison | SLT  | sltu rd,rs1,rs2  |         |        |         | Set Less Than Unsigned  |
 
 - I = Immediate
   immediate is a constant
